@@ -10,6 +10,7 @@
 import { expect } from 'chai';
 import arrayRotate from '../src/arrays/01-array-rotation';
 import arrayRotateReverse from '../src/arrays/02-array-rotation-reverse';
+import arrayRotateCycled from '../src/arrays/03-array-rotation-cyclic';
 
 describe('Arrays - Reverse', () => {
 
@@ -54,6 +55,23 @@ describe('Arrays - Reverse', () => {
       const output = arrayRotateReverse(arr, 0);
       expect(output).to.eql([1, 2, 3, 4, 5]);
       expect(typeof(output)).to.equal('object');
+    });
+  });
+
+  describe('Array.rotate() -  Cyclic', () => {
+
+    it('should return the 1 cycled array', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const output = arrayRotateCycled(arr);
+      expect(output).to.eql([2, 3, 4, 5, 1]);
+    });
+
+    it('should return the 3 cycled array', () => {
+      const arr = [1, 2, 3, 4, 5];
+      const output = arrayRotateCycled(arr);
+      const output1 = arrayRotateCycled(output);
+      const output2 = arrayRotateCycled(output1);
+      expect(output2).to.eql([4, 5, 1, 2, 3]);
     });
   });
 
