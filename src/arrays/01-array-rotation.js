@@ -1,10 +1,10 @@
-export default function(array, d) {
-    const length = array.length
-    if(length === d || d === 0) return array
+export default function (array, d) {
+  const length = array.length;
+  if (length === d || d === 0) return array;
 
-    let temp = []
-    for (let i = 0; i < d; i++) {
-      temp.push(array[i])
-    }
-    return array.slice(d).concat(temp)
+  const temp = [];
+  for (let i = 0; i < d; i++) {
+    temp.push(array[i]);
+  }
+  return array.slice(d).concat(temp);
 }
