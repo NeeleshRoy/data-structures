@@ -11,6 +11,7 @@ import { expect } from 'chai';
 import arrayRotate from '../src/arrays/01-array-rotation';
 import arrayRotateReverse from '../src/arrays/02-array-rotation-reverse';
 import arrayRotateCycled from '../src/arrays/03-array-rotation-cyclic';
+import arrayRotateSum from '../src/arrays/04-MaxValue-of-rotated';
 
 describe('Arrays - Reverse', () => {
 
@@ -72,6 +73,15 @@ describe('Arrays - Reverse', () => {
       const output1 = arrayRotateCycled(output);
       const output2 = arrayRotateCycled(output1);
       expect(output2).to.eql([4, 5, 1, 2, 3]);
+    });
+  });
+
+  describe('Array.rotate() -  Max value of sum with only rotations', () => {
+
+    it('should return the 1 cycled array', () => {
+      const arr = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const output = arrayRotateSum(arr);
+      expect(output).to.eql(330);
     });
   });
 

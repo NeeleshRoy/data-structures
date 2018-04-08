@@ -21,5 +21,21 @@ describe('Utilities', () => {
       expect(typeof(output)).to.eql('object');
       expect(output).to.eql([2, 1]);
     });
+
+    it('should swap two arrays', () => {
+      const a = [1];
+      const b = [2];
+      const output = swap(a, b);
+      expect(typeof(output)).to.eql('object');
+      expect(output).to.eql([2, 1]);
+    });
+
+    it('should swap two arrays of different length', () => {
+      const a = [1, 3];
+      const b = [2, 5, 4];
+      const output = swap(a, b);
+      expect(typeof(output)).to.eql('object');
+      expect(output).to.eql([2, 5, 4, 1, 3]);
+    });
   });
 });
