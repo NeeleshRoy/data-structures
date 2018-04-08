@@ -12,6 +12,7 @@ import arrayRotate from '../src/arrays/01-array-rotation';
 import arrayRotateReverse from '../src/arrays/02-array-rotation-reverse';
 import arrayRotateCycled from '../src/arrays/03-array-rotation-cyclic';
 import arrayRotateSum from '../src/arrays/04-MaxValue-of-rotated';
+import arrayRotateMaxSum from '../src/arrays/05-MaxSum-of-all-rotations';
 
 describe('Arrays - Reverse', () => {
 
@@ -82,6 +83,27 @@ describe('Arrays - Reverse', () => {
       const arr = [10, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       const output = arrayRotateSum(arr);
       expect(output).to.eql(330);
+    });
+  });
+
+  describe('Array.rotate() -  Maximum sum of i*arr[i] among all rotations of a given array', () => {
+
+    it('should return max sum of every rotation ', () => {
+      const arr = [8, 3, 1, 2];
+      const output = arrayRotateMaxSum(arr);
+      expect(output).to.eql(29);
+    });
+
+    it('should return the same array', () => {
+      const arr = [8];
+      const output = arrayRotateMaxSum(arr);
+      expect(output).to.eql([8]);
+    });
+
+    it('should return the same array', () => {
+      const arr = [];
+      const output = arrayRotateMaxSum(arr);
+      expect(output).to.eql([]);
     });
   });
 
