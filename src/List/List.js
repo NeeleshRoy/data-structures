@@ -24,12 +24,24 @@ export default class List {
     return this.datastore;
   }
 
-  getElement() {
-
+  insert(element, after) {
+    const insertPos = this.find(after);
+    if (insertPos > -1) {
+      this.datastore.splice(insertPos + 1, 0, element);
+      ++ this.listSize;
+      return true;
+    }
+    return false;
   }
 
-  insert() {
-
+  contains(element) {
+    let out = false;
+    for (let i = 0; i < this.datastore.length; i++) {
+      if (this.datastore[i] === element) {
+        out = true;
+      }
+    }
+    return out;
   }
 
   append(element) {
@@ -47,26 +59,34 @@ export default class List {
   }
 
   front() {
-
+    this.pos = 0;
   }
 
   end() {
-
+    this.pos = this.listSize - 1;
   }
 
   prev() {
-
+    if (this.pos > 0) {
+      --this.pos;
+    }
   }
 
   next() {
-
+    if (this.pos < this.listSize - 1) {
+      ++this.pos;
+    }
   }
 
   currPos() {
-
+    return this.pos;
   }
 
-  moveTo() {
+  moveTo(position) {
+    this.pos = position;
+  }
 
+  getElement() {
+    return this.datastore[this.pos];
   }
 }
