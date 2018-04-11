@@ -7,9 +7,7 @@ export default class Stack {
     this.datastore[this.top++] = element;
   }
   pop() {
-    if(this.top === 0) return;
-    this.datastore = this.datastore.splice(0, --this.top);
-    return this.datastore[this.top - 1]; 
+    return this.datastore[--this.top];
   }
   peek() {
     return this.datastore[this.top - 1];
