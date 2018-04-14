@@ -9,6 +9,7 @@
 
 import { expect } from 'chai';
 import Stack from '../src/Stack/Stack';
+import palindrome from '../src/Stack/Palindrome';
 
 describe('Stack - Class and Methods', () => {
 
@@ -64,6 +65,18 @@ describe('Stack - Class and Methods', () => {
 
       expect(out).to.eql(3);
       expect(stack.datastore).to.eql([2, 3, 4]);
+    });
+  });
+
+  describe('Stack.Palindrome', () => {
+    it('should return true', () => {
+      const isPalindrome = palindrome('racecar');
+      expect(isPalindrome).to.be.true;
+    });
+
+    it('should return false', () => {
+      const isPalindrome = palindrome('neelesh');
+      expect(isPalindrome).to.be.false;
     });
   });
 });
