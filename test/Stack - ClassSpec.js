@@ -10,6 +10,7 @@
 import { expect } from 'chai';
 import Stack from '../src/Stack/Stack';
 import palindrome from '../src/Stack/Palindrome';
+import missingParen from '../src/Stack/MissingParenthesis';
 
 describe('Stack - Class and Methods', () => {
 
@@ -77,6 +78,29 @@ describe('Stack - Class and Methods', () => {
     it('should return false', () => {
       const isPalindrome = palindrome('neelesh');
       expect(isPalindrome).to.be.false;
+    });
+  });
+
+  describe('Stack.MissingParenthesis', () => {
+    it('Should return -1 for no matches', () => {
+      const exp = '2.3 + (23 / 12) + 3.14159 * .24';
+      const out = missingParen(exp);
+
+      expect(out).to.eql(-1);
+    });
+
+    it('Should return the missing position', () => {
+      const exp = '2.3 + (23 / 12 + 3.14159 * .24';
+      const out = missingParen(exp);
+
+      expect(out).to.eql(6);
+    });
+
+    it('Should return the missing position', () => {
+      const exp = '2.3 + (23 / 12 + (3.14159 * .24)';
+      const out = missingParen(exp);
+
+      expect(out).to.eql(6);
     });
   });
 });
