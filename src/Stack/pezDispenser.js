@@ -8,7 +8,7 @@ export default function (dispenser) {
       s1.push(dispenser.datastore[i]);
     }
   }
-  for (let i = 0; i < s1.length(); i++ ) {
+  for (let i = 0; i < s1.length(); i++) {
     s2.push(s1.datastore[i]);
   }
   return s2;

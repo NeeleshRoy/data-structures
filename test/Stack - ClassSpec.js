@@ -11,7 +11,7 @@ import { expect } from 'chai';
 import Stack from '../src/Stack/Stack';
 import palindrome from '../src/Stack/Palindrome';
 import missingParen from '../src/Stack/MissingParenthesis';
-import pezDispenser  from '../src/Stack/pezDispenser';
+import pezDispenser from '../src/Stack/pezDispenser';
 
 describe('Stack - Class and Methods', () => {
 
@@ -116,7 +116,7 @@ describe('Stack - Class and Methods', () => {
       test.push('red');
       const out = pezDispenser(test);
 
-      expect(out.datastore).to.eql([ 'red', 'red', 'blue', 'red' ]);
+      expect(out.datastore).to.eql(['red', 'red', 'blue', 'red']);
     });
 
     it('Should filter out the yellow marbles, and give datastore with no values', () => {
