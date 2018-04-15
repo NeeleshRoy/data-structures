@@ -15,10 +15,6 @@ export default function (expression = '') {
     }
   }
 
-  if (stack.length() === 0) {
-    return -1;
-  }
-
   if (stack.length() === 1) {
     return stack.peek();
   }

@@ -59,6 +59,14 @@ describe('List - Class and Methods', () => {
       expect(list.length()).to.eql(2);
     });
 
+    it('should not delete/remove any element from the list', () => {
+      const list = new List([1, 2, 3]);
+      const out = list.remove(5);
+      expect(list.toString()).to.eql([1, 2, 3]);
+      expect(list.length()).to.eql(3);
+      expect(out).to.be.false;
+    });
+
     it('should clear/reset all the values in the list', () => {
       const list = new List([1, 2, 3], 4, 7);
       list.clear();
