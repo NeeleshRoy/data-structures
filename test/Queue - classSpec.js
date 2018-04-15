@@ -11,7 +11,6 @@ import { expect } from 'chai';
 import Queue from '../src/Queue/Queue';
 
 describe('Queue - Class and Methods', () => {
-  
   describe('Queue.properties', () => {
     it('should have the datastore', () => {
       const queue = new Queue();
@@ -19,7 +18,6 @@ describe('Queue - Class and Methods', () => {
       expect(typeof(queue.datastore)).to.eql('object');
     });
   });
-  
   describe('Queue.functions', () => {
     it('enqueue - should add elements to the queue properly', () => {
       const q = new Queue();
@@ -41,32 +39,32 @@ describe('Queue - Class and Methods', () => {
     });
 
     it('front - should return the first element in the queue', () => {
-      const q = new Queue([1,2,3]);
+      const q = new Queue([1, 2, 3]);
       const out = q.front();
       expect(out).to.eql(1);
     });
 
     it('back - should return the last element in the queue', () => {
-      const q = new Queue([1,2,3]);
+      const q = new Queue([1, 2, 3]);
       const out = q.back();
       expect(out).to.eql(3);
     });
 
     it('toString - should return the string of elements in the queue', () => {
-      const q = new Queue([1,2,3]);
+      const q = new Queue([1, 2, 3]);
       const out = q.toString();
       expect(out).to.eql([1, 2, 3]);
     });
 
     it('clear - should clear the elements in the queue', () => {
-      const q = new Queue([1,2,3]);
+      const q = new Queue([1, 2, 3]);
       q.clear();
       expect(q.datastore).to.eql([]);
       expect(q.datastore.length).to.eql(0);
     });
 
     it('isEmpty - should return false', () => {
-      const q = new Queue([1,2,3]);
+      const q = new Queue([1, 2, 3]);
       const out = q.isEmpty();
       expect(out).to.be.false;
     });
