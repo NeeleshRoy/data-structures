@@ -1,5 +1,5 @@
 export default function (a, b) {
-  if (typeof(a) === 'object') {
+  if (a instanceof Object) {
     const temp = a;
     a = b;
     b = temp;

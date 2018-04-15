@@ -11,7 +11,7 @@ import { expect } from 'chai';
 import List from '../src/List/List';
 import driverQuestion1 from '../src/List/question-1';
 import driverQuestion2 from '../src/List/question-2';
-import { PersonList } from '../src/List/question-3';
+import { PersonList, Person } from '../src/List/question-3';
 
 describe('List - Questions', () => {
 
@@ -82,6 +82,31 @@ describe('List - Questions', () => {
 
     personList.addPerson('Neelesh', 'male');
     personList.addPerson('Diya', 'female');
+
+    it('Should have default person properties', () => {
+      const person = new Person();
+
+      expect(person).to.have.property('name');
+      expect(person).to.have.property('gender');
+      expect(person.name).to.eql('');
+      expect(person.gender).to.eql('male');
+    });
+
+    it('Should have person properties', () => {
+      const person = new Person('Neelesh', 'male');
+
+      expect(person).to.have.property('name');
+      expect(person).to.have.property('gender');
+      expect(person.name).to.eql('Neelesh');
+      expect(person.gender).to.eql('male');
+    });
+
+    it('Should have default personList properties', () => {
+      const pList = new PersonList();
+
+      expect(pList).to.have.property('personList');
+      expect(pList.personList.datastore).to.eql([]);
+    });
 
     it('Should return female person objects', () => {
       const out = personList.getQualifiedPerson('female');
