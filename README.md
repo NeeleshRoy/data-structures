@@ -2,8 +2,7 @@
 
 [![NPM version](http://img.shields.io/npm/v/data-structures.svg?style=flat-square)](https://www.npmjs.com/package/data-structures)
 [![NPM downloads](http://img.shields.io/npm/dm/data-structures.svg?style=flat-square)](https://www.npmjs.com/package/data-structures)
-[![Build Status](http://img.shields.io/travis/neeleshroy/data-structures/master.svg?style=flat-square)](https://travis-ci.org/neeleshroy/data-structures)
-[![Coverage Status](https://img.shields.io/coveralls/neeleshroy/data-structures.svg?style=flat-square)](https://coveralls.io/neeleshroy/data-structures)
+[![Coverage Status](https://coveralls.io/repos/github/NeeleshRoy/data-structures/badge.svg?branch=master)](https://coveralls.io/github/NeeleshRoy/data-structures?branch=master)
 [![Dependency Status](http://img.shields.io/david/neeleshroy/data-structures.svg?style=flat-square)](https://david-dm.org/neeleshroy/data-structures)
 
 > Data structures in javascript

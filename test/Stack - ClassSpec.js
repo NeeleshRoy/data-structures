@@ -11,6 +11,7 @@ import { expect } from 'chai';
 import Stack from '../src/Stack/Stack';
 import palindrome from '../src/Stack/Palindrome';
 import missingParen from '../src/Stack/MissingParenthesis';
+import pezDispenser  from '../src/Stack/pezDispenser';
 
 describe('Stack - Class and Methods', () => {
 
@@ -101,6 +102,40 @@ describe('Stack - Class and Methods', () => {
       const out = missingParen(exp);
 
       expect(out).to.eql(6);
+    });
+  });
+
+  describe('Stack.pezDispenser', () => {
+    it('Should filter out the yellow marbles', () => {
+      const test = new Stack();
+      test.push('red');
+      test.push('red');
+      test.push('yellow');
+      test.push('blue');
+      test.push('yellow');
+      test.push('red');
+      const out = pezDispenser(test);
+
+      expect(out.datastore).to.eql([ 'red', 'red', 'blue', 'red' ]);
+    });
+
+    it('Should filter out the yellow marbles, and give datastore with no values', () => {
+      const test = new Stack();
+      test.push('yellow');
+      test.push('yellow');
+      test.push('yellow');
+      test.push('yellow');
+      const out = pezDispenser(test);
+
+      expect(out.datastore).to.eql([]);
+    });
+
+    it('Should return the datastore with same values', () => {
+      const test = new Stack();
+      test.push('red');
+      const out = pezDispenser(test);
+
+      expect(out.datastore).to.eql(['red']);
     });
   });
 });
