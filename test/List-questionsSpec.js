@@ -83,6 +83,14 @@ describe('List - Questions', () => {
     personList.addPerson('Neelesh', 'male');
     personList.addPerson('Diya', 'female');
 
+    it('Should have default person properties on invoking addPerson Method', () => {
+      const pList = new PersonList([]);
+      pList.addPerson();
+
+      const out = pList.personList.toString();
+      expect(out).to.eql([{ name: '', gender: 'male' }]);
+    });
+
     it('Should have default person properties', () => {
       const person = new Person();
 
