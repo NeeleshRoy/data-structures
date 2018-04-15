@@ -115,6 +115,11 @@ describe('List - Class and Methods', () => {
       list.next();
       const out = list.getElement();
       expect(out).to.eql(4);
+
+      const list1 = new List([1, 2, 3, 4, 5], 4, 5);
+      list1.next();
+      const out1 = list1.getElement();
+      expect(out1).to.eql(5);
     });
 
     it('Should return the previous element of the list', () => {
@@ -122,6 +127,11 @@ describe('List - Class and Methods', () => {
       list.prev();
       const out = list.getElement();
       expect(out).to.eql(2);
+
+      const list1 = new List([1, 2, 3, 4, 5], 0, 5);
+      list1.prev();
+      const out1 = list1.getElement();
+      expect(out1).to.eql(1);
     });
 
     it('Should return the current element of the list', () => {

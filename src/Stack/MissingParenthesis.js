@@ -1,6 +1,6 @@
 import Stack from './Stack';
 
-export default function (expression = '') {
+export default function (expression) {
   const stack = new Stack();
 
   for (let i = 0; i < expression.length; i++) {
