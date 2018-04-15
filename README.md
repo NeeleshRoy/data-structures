@@ -1,7 +1,7 @@
 # [data-structures](https://github.com/neeleshroy/data-structures)
 
 [![NPM version](http://img.shields.io/npm/v/data-structures.svg?style=flat-square)](https://www.npmjs.com/package/data-structures)
-[![NPM downloads](http://img.shields.io/npm/dm/data-structures.svg?style=flat-square)](https://www.npmjs.com/package/data-structures)
+[![Build Status](https://travis-ci.org/NeeleshRoy/data-structures.svg?branch=master)](https://travis-ci.org/NeeleshRoy/data-structures)
 [![Coverage Status](https://coveralls.io/repos/github/NeeleshRoy/data-structures/badge.svg?branch=master)](https://coveralls.io/github/NeeleshRoy/data-structures?branch=master)
 [![Dependency Status](http://img.shields.io/david/neeleshroy/data-structures.svg?style=flat-square)](https://david-dm.org/neeleshroy/data-structures)
 
