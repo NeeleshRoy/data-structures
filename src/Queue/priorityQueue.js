@@ -2,15 +2,13 @@ export default class {
   constructor(datastore = []) {
     this.datastore = datastore;
   }
-  
   enqueue(value, priority) {
     const obj = {
       value,
-      priority
-    }
+      priority,
+    };
     this.datastore.push(obj);
   }
-  
   dequeue() {
     let priority = this.datastore[0].priority;
     for (let i = 1; i < this.datastore.length; ++i) {
@@ -18,9 +16,8 @@ export default class {
         priority = i;
       }
     }
-    return this.datastore.splice(priority,1);
+    return this.datastore.splice(priority, 1);
   }
-  
   toString() {
     return this.datastore;
   }
