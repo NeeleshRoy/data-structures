@@ -2,29 +2,24 @@ class Deque {
   constructor(datastore = []) {
     this.datastore = datastore;
   }
-  enqueue_front(item) {
+  enqueueFront(item) {
     this.datastore.unshift(item);
   }
-  
-  enqueue_back(item) {
+  enqueueBack(item) {
     this.datastore.push(item);
   }
-  dequeue_back() {
+  dequeueBack() {
     this.datastore.pop();
   }
-  
-  dequeue_front() {
+  dequeueFront() {
     this.datastore.shift();
   }
-  
   toString() {
     return this.datastore;
   }
-  
   clear() {
     this.datastore = [];
   }
-  
   isEmpty() {
     if (this.datastore.length === 0) {
       return true;

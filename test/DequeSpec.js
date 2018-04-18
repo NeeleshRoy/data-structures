@@ -22,55 +22,44 @@ describe('Deque - Class and Methods', () => {
   describe('Deque.functions', () => {
     it('enqueue_front() - should add elements to the front of the queue properly', () => {
       const q = new Deque([1, 2]);
-      q.enqueue_front(3);
-      
+      q.enqueueFront(3);
       expect(q.datastore).to.eql([3, 1, 2]);
       expect(q.datastore.length).to.eql(3);
     });
-    
-    it('enqueue_front() - should add elements to the back of the queue properly', () => {
+    it('enqueueFront() - should add elements to the back of the queue properly', () => {
       const q = new Deque([1, 2]);
-      q.enqueue_back(3);
-      
+      q.enqueueBack(3);
       expect(q.datastore).to.eql([1, 2, 3]);
       expect(q.datastore.length).to.eql(3);
     });
-    
-    it('dequeue_front() - should remove elements from the front of the queue properly', () => {
+    it('dequeueBack() - should remove elements from the front of the queue properly', () => {
       const q = new Deque([1, 2, 3]);
-      q.dequeue_front();
-      
+      q.dequeueFront();
       expect(q.datastore).to.eql([2, 3]);
       expect(q.datastore.length).to.eql(2);
     });
-    
     it('dequeue_back() - should remove elements from the back of the queue properly', () => {
       const q = new Deque([1, 2, 3]);
-      q.dequeue_back();
-      
+      q.dequeueBack();
       expect(q.datastore).to.eql([1, 2]);
       expect(q.datastore.length).to.eql(2);
     });
-    
     it('toString - should return the string of elements in the queue', () => {
       const q = new Deque([1, 2, 3]);
       const out = q.toString();
       expect(out).to.eql([1, 2, 3]);
     });
-    
     it('clear - should clear the elements in the queue', () => {
       const q = new Deque([1, 2, 3]);
       q.clear();
       expect(q.datastore).to.eql([]);
       expect(q.datastore.length).to.eql(0);
     });
-    
     it('isEmpty - should return false', () => {
       const q = new Deque([1, 2, 3]);
       const out = q.isEmpty();
       expect(out).to.be.false;
     });
-    
     it('isEmpty - should return true', () => {
       const q = new Deque([]);
       const out = q.isEmpty();
