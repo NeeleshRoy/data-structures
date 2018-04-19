@@ -1,6 +1,6 @@
 export default class {
   constructor() {
-    this.datastore = new Array();
+    this.datastore = [];
   }
 
   add(key, value) {
