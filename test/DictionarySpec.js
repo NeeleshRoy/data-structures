@@ -75,5 +75,18 @@ describe('Dictionary - Class and Methods', () => {
 
       expect(dict.datastore).to.eql([]);
     });
+
+    it('sort() - Should sort the datastore', () => {
+      const dict = new Dictionary();
+      dict.add('foo', 'bar');
+      dict.add('abc', 'xyz');
+      dict.add('aaa', 'bbb');
+      dict.sort();
+      const keys = Object.keys(dict.datastore);
+
+      expect(keys[0]).to.eql('aaa');
+      expect(keys[1]).to.eql('abc');
+      expect(keys[2]).to.eql('foo');
+    });
   });
 });
