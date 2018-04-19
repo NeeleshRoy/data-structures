@@ -57,5 +57,14 @@ describe('Dictionary - Class and Methods', () => {
       expect(out.foo).to.eql('bar');
       expect(out.abc).to.eql('xyz');
     });
+
+    it('count() - Should return the total number of elements in datastore', () => {
+      const dict = new Dictionary();
+      dict.add('foo', 'bar');
+      dict.add('abc', 'xyz');
+      const count = dict.count();
+
+      expect(count).to.eql(2);
+    });
   });
 });

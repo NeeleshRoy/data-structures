@@ -1,0 +1,4 @@
+#!/bin/bash -l
+export npm_config_loglevel=error
+set -xe
+npm run lint

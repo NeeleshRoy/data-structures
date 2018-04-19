@@ -18,4 +18,12 @@ export default class {
   showAll() {
     return this.datastore;
   }
+
+  count() {
+    let count = 0;
+    for(let i in this.datastore) {
+      ++count;
+    }
+    return count;
+  }
 }
