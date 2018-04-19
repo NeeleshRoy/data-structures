@@ -26,4 +26,8 @@ export default class {
     }
     return count;
   }
+
+  clear() {
+    this.datastore = [];
+  }
 }
