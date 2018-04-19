@@ -43,6 +43,8 @@ $ npm install data-structures
     * Palindrome
     * pez Dispenser
     * Missing Parenthesis
+6. Dictionary:
+    * Dictionary
 
 ### How to Test
 
