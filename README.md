@@ -13,9 +13,36 @@
 $ npm install data-structures
 ```
 
-### Getting Started
+### List of Data structures
+1. Arrays
+2. Linked Lists
+3. List
+4. Queue
+5. Stack
 
-...
+### Table of contents:
+1. Arrays :
+    * Rotation of Arrays
+    * Reverse rotations of arrays
+    * Cyclic Rotations of arrays
+    * Maximum value of all rotations of elements of a n array
+    * Maximum Sum of all possible rotations of array.
+2. Linked Lists : 
+    * Singly Linked List
+3. List:
+    * List
+    * List question - 1
+    * List question - 2
+    * List question - 3
+4. Queue:
+    * Queue
+    * Priority Queue
+    * Deque
+5. Stack:
+    * Stack
+    * Palindrome
+    * pez Dispenser
+    * Missing Parenthesis
 
 ### How to Test
 
