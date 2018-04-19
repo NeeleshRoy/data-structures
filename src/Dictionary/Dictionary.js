@@ -28,14 +28,13 @@ export default class {
   }
 
   sort() {
-    const keys = Object.keys(this.datastore);   
+    const keys = Object.keys(this.datastore);
     const sortedKeys = keys.sort();
     const tempDataStore = this.datastore;
-    
     this.datastore = [];
     sortedKeys.forEach((key) => {
       this.datastore[key] = tempDataStore[key];
-    })
+    });
 
     return true;
   }
