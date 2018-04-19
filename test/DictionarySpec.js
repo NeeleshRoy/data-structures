@@ -66,5 +66,14 @@ describe('Dictionary - Class and Methods', () => {
 
       expect(count).to.eql(2);
     });
+
+    it('clear() - Should clear the datastore', () => {
+      const dict = new Dictionary();
+      dict.add('foo', 'bar');
+      dict.add('abc', 'xyz');
+      dict.clear();
+
+      expect(dict.datastore).to.eql([]);
+    });
   });
 });

@@ -20,11 +20,7 @@ export default class {
   }
 
   count() {
-    let count = 0;
-    for(let i in this.datastore) {
-      ++count;
-    }
-    return count;
+    return Object.keys(this.datastore).length;
   }
 
   clear() {
