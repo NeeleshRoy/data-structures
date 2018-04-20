@@ -1,4 +1,5 @@
-[{
+/* eslint-disable */
+const phone = [{
   "name": "Faith Samart",
   "phone": "838-896-7886"
 }, {
@@ -299,3 +300,7 @@
   "name": "Rayshell Terrazzo",
   "phone": "951-860-2260"
 }]
+
+export default function() {
+  return phone;
+}
