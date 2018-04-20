@@ -10,6 +10,7 @@
 import { expect } from 'chai';
 import Dictionary from '../src/Dictionary/Dictionary';
 import Problem1 from '../src/Dictionary/problem-1';
+import problem2 from '../src/Dictionary/problem-2';
 
 describe('Dictionary - Class and Methods', () => {
   describe('Dictionary.properties', () => {
@@ -131,6 +132,17 @@ describe('Dictionary - Class and Methods', () => {
 
       expect(solution.dict.count()).to.eql(0);
       expect(solution.dict.datastore).to.eql([]);
+    });
+  });
+
+  describe('Dictionary.question-2', () => {
+    it('Should have the all the words', () => {
+      const solution = problem2('the this the that thou then then thou thou');
+      expect(solution.the).to.eql(2);
+      expect(solution.this).to.eql(1);
+      expect(solution.that).to.eql(1);
+      expect(solution.thou).to.eql(3);
+      expect(solution.then).to.eql(2);
     });
   });
 });
