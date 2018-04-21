@@ -14,6 +14,12 @@ import HashTable from '../src/Hashing/Hashing';
 describe('Hashing - Class and Methods', () => {
 
   describe('Hashing.properties', () => {
+
+    it('Contructor', () => {
+      const ht = new HashTable();
+      expect(ht.table).to.exist;
+    });
+
     it('should have a table of size 173', () => {
       const ht = new HashTable([], 173);
       expect(ht.table).to.exist;
@@ -28,6 +34,32 @@ describe('Hashing - Class and Methods', () => {
       ht.put(23);
       expect(ht.table.indexOf(23)).to.be.above(-1);
       expect(spy).to.be.calledOnce;
+    });
+
+    it('simpleHash() - Should hash element data', () => {
+      const ht = new HashTable([], 173);
+      const out = ht.simpleHash("test");
+
+      expect(out).to.equal(102);
+    });
+
+    it('showDistro() - Should show elements of data with indices', () => {
+      const ht = new HashTable([], 173);
+      ht.put("Neelesh");
+      ht.put("Jason");
+      ht.put("olivia");
+      const out = ht.showDistro();
+
+      expect(out.indexOf("Neelesh")).to.be.above(-1);
+      expect(out.indexOf("Jason")).to.be.above(-1);
+      expect(out.indexOf("olivia")).to.be.above(-1);
+    });
+
+    it('showDistro() - Should return empty array', () => {
+      const ht = new HashTable([], 173);
+      const out = ht.showDistro();
+
+      expect(out).to.eql([]);
     });
   });
 });
