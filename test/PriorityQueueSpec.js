@@ -13,6 +13,12 @@ import PriorityQueue from '../src/Queue/priorityQueue';
 describe('Priority Queue - Class and Methods', () => {
   describe('Priority Queue.properties', () => {
     it('should have the datastore', () => {
+      const pqueue = new PriorityQueue([1, 2, 3]);
+      expect(pqueue).to.have.property('datastore');
+      expect(typeof(pqueue.datastore)).to.eql('object');
+    });
+
+    it('should have the datastore', () => {
       const pqueue = new PriorityQueue();
       expect(pqueue).to.have.property('datastore');
       expect(typeof(pqueue.datastore)).to.eql('object');
