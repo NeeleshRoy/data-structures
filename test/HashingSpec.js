@@ -8,57 +8,52 @@
 */
 
 import { expect } from 'chai';
-import sinon from 'sinon';
-import HashTable from '../src/Hashing/Hashing';
+import { HashTable } from '../src/Hashing/HashTable';
 
 describe('Hashing - Class and Methods', () => {
   describe('Hashing.properties', () => {
     it('Contructor', () => {
       const ht = new HashTable();
       expect(ht.table).to.exist;
+      expect(ht.table.length).to.eql(137);
     });
+
     it('should have a table of size 173', () => {
-      const ht = new HashTable([], 173);
+      const ht = new HashTable(173);
       expect(ht.table).to.exist;
       expect(ht.table.length).to.eql(173);
     });
   });
+
   describe('Hashing.functions', () => {
-    it('Put() - Should add elements properly', () => {
-      const ht = new HashTable([], 173);
-      const spy = sinon.spy(ht.simpleHash);
-      ht.put(23);
-      expect(ht.table.indexOf(23)).to.be.above(-1);
-      expect(spy).to.be.calledOnce;
+    it('put() - Should save the item hashed', () => {
+      const ht = new HashTable();
+      ht.put('8727618', 'Neelesh');
+
+      expect(ht.table.indexOf('Neelesh')).to.above(0);
+      expect(ht.table.indexOf('Neelesh')).to.below(137);
     });
-    it('simpleHash() - Should hash element data', () => {
-      const ht = new HashTable([], 173);
-      const out = ht.simpleHash('test');
-      expect(out).to.equal(102);
+
+    it('get() - Should get the item', () => {
+      const ht = new HashTable();
+      ht.put('Neelesh', '83728647');
+      const out = ht.get('Neelesh');
+      expect(out).to.eql('83728647');
     });
-    it('betterHash() - Should hash element data perfectly without collisions', () => {
-      const ht = new HashTable([], 137);
-      const names = ['Waylon', 'Justine', 'Mathias', 'Angela', 'Joanna', 'Lia'];
-      names.forEach(element => {
-        ht.putWithoutCollisions(element);
-      });
-      const out = ht.getIndices();
-      expect(out.length).to.eql(6);
-    });
-    it('showDistro() - Should show elements of data with indices', () => {
-      const ht = new HashTable([], 173);
-      ht.put('Neelesh');
-      ht.put('Jason');
-      ht.put('olivia');
+
+    it('showDistro() - Should get the distribution of items as an array', () => {
+      const ht = new HashTable();
+      ht.put('Neelesh', '83728647');
+      ht.put('John', '78839445');
+      ht.put('Jack', '74829478');
       const out = ht.showDistro();
-      expect(out.indexOf('Neelesh')).to.be.above(-1);
-      expect(out.indexOf('Jason')).to.be.above(-1);
-      expect(out.indexOf('olivia')).to.be.above(-1);
-    });
-    it('showDistro() - Should return empty array', () => {
-      const ht = new HashTable([], 173);
-      const out = ht.showDistro();
-      expect(out).to.eql([]);
+
+      expect(out.indexOf('83728647')).to.be.above(0);
+      expect(out.indexOf('78839445')).to.be.above(0);
+      expect(out.indexOf('74829478')).to.be.above(0);
+      expect(out.indexOf('83728647')).to.be.below(137);
+      expect(out.indexOf('78839445')).to.be.below(137);
+      expect(out.indexOf('74829478')).to.be.below(137);
     });
   });
 });
