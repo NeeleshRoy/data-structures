@@ -1,6 +1,6 @@
-export default class set {
-  constructor(data = []) {
-    this.dataStore = data;
+export default class Set {
+  constructor() {
+    this.dataStore = [];
   }
 
   add(item) {
@@ -15,6 +15,20 @@ export default class set {
     const pos = this.dataStore.indexOf(item);
     if (pos > -1) {
       this.dataStore.splice(pos, 1);
+      return true;
+    }
+    return false;
+  }
+
+  show() {
+    return this.dataStore;
+  }
+
+  contains(item) {
+    if(this.dataStore.indexOf(item) > -1) {
+      return true;
+    } else {
+      return false;
     }
   }
 }
