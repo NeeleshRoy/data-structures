@@ -18,4 +18,80 @@ describe('Set - Class and Methods', () => {
       expect(typeof(set.dataStore)).to.eql('object');
     });
   });
+
+  describe('Set.methods', () => {
+    it('add() - should add the item to the list', () => {
+      const set = new Set();
+      set.add(45);
+      set.add(43);
+
+      expect(set.dataStore.length).to.eql(2);
+      expect(set.dataStore.indexOf(45) > -1).to.be.true;
+      expect(set.dataStore.indexOf(43) > -1).to.be.true;
+    });
+
+    it('add() - should add the values only one time', () => {
+      const set = new Set();
+      set.add(45);
+      set.add(45);
+      set.add(45);
+      set.add(45);
+      set.add(45);
+
+      expect(set.dataStore.length).to.eql(1);
+      expect(set.dataStore.indexOf(45) > -1).to.be.true;
+    });
+
+    it('remove() - should remove the item from the list', () => {
+      const set = new Set();
+      set.add(45);
+      set.add(43);
+      set.remove(45);
+
+      expect(set.dataStore.length).to.eql(1);
+      expect(set.dataStore.indexOf(43) > -1).to.be.true;
+    });
+
+    it('remove() - should return false for no items', () => {
+      const set = new Set();
+
+      set.add(34);
+      const out = set.remove(45);
+
+      expect(out).to.be.false;
+      expect(set.dataStore.length).to.eql(1);
+      expect(set.dataStore.indexOf(34) > -1).to.be.true;
+    });
+
+    it('show() - should return the datastore', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      const out = set.show();
+
+      expect(out).to.be.eql([34, 46]);
+      expect(out.length).to.eql(2);
+    });
+
+    it('contains() - should return true', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      const out = set.contains(46);
+
+      expect(out).to.be.true;
+    });
+
+    it('contains() - should return false', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      const out = set.contains(56);
+
+      expect(out).to.be.false;
+    });
+  });
 });

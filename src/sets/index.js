@@ -4,7 +4,7 @@ export default class Set {
   }
 
   add(item) {
-    if (this.dataStore.indexOf(item) > -1) {
+    if (this.dataStore.indexOf(item) < 0) {
       this.dataStore.push(item);
       return true;
     }
@@ -25,10 +25,9 @@ export default class Set {
   }
 
   contains(item) {
-    if(this.dataStore.indexOf(item) > -1) {
+    if (this.dataStore.indexOf(item) > -1) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 }
