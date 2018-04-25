@@ -8,9 +8,9 @@
 > Data structures in javascript
 
 ### How to Install
-
+1. Clone the Repo && cd
 ```sh
-$ npm install data-structures
+$ npm install
 ```
 
 ### List of Data structures
@@ -19,6 +19,8 @@ $ npm install data-structures
 3. List
 4. Queue
 5. Stack
+6. Dictionary
+7. Sets
 
 ### Table of contents:
 1. Arrays :
@@ -45,6 +47,10 @@ $ npm install data-structures
     * Missing Parenthesis
 6. Dictionary:
     * Dictionary
+    * Dict - Problem 1
+    * Dict - Problem 2
+7. Sets:
+    * Sets
 
 ### How to Test
 
@@ -55,13 +61,6 @@ $ npm run lint          # Lint the source code with ESLint
 $ npm test              # Run unit tests with Mocha
 $ npm run test:watch    # Run unit tests with Mocha, and watch files for changes
 $ npm run test:cover    # Run unit tests with code coverage by Istanbul
-```
-
-To launch the documentation site, run:
-
-```sh
-$ npm install -g easystatic
-$ npm start
 ```
 
 ### License
