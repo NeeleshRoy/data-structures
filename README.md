@@ -51,6 +51,9 @@ $ npm install
     * Dict - Problem 2
 7. Sets:
     * Sets
+    * problem - 1
+    * Higher() - Included in class definition
+    * Lower() - Included in class definition
 
 ### How to Test
 
