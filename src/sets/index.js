@@ -30,4 +30,15 @@ export default class Set {
     }
     return false;
   }
+
+  union(set) {
+    const temp = new Set();
+    set.dataStore.forEach(element => {
+      if(!this.dataStore.contains(element)) {
+        temp.dataStore.push(element);
+      }
+    });
+    temp.dataStore = temp.dataStore.join(this.dataStore);
+    return temp.dataStore;
+  }
 }
