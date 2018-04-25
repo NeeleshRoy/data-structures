@@ -64,5 +64,4 @@ describe('SortedSet - Class and Methods', () => {
       expect(set.dataStore).to.eql([19, 45, 54]);
     });
   });
-
 });

@@ -1,10 +1,6 @@
 import Set from './index';
 
-export default class extends Set{
-  constructor() {
-    super();
-  }
-
+export default class extends Set {
   sort() {
     this.dataStore.sort();
   }

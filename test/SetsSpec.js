@@ -190,7 +190,7 @@ describe('Set - Class and Methods', () => {
       set.add(45);
       set.add(44);
 
-      const out = set.higher(40)
+      const out = set.higher(40);
       expect(out).to.eql(44);
     });
 
@@ -202,7 +202,7 @@ describe('Set - Class and Methods', () => {
       set.add(45);
       set.add(44);
 
-      const out = set.higher(56)
+      const out = set.higher(56);
       expect(out).to.be.false;
     });
 
@@ -214,7 +214,7 @@ describe('Set - Class and Methods', () => {
       set.add(45);
       set.add(44);
 
-      const out = set.lower(19)
+      const out = set.lower(19);
       expect(out).to.be.false;
     });
 
