@@ -33,12 +33,30 @@ export default class Set {
 
   union(set) {
     const temp = new Set();
+    for (let i = 0; i < this.dataStore.length; ++i) {
+      temp.add(this.dataStore[i]);
+    }
+
     set.dataStore.forEach(element => {
-      if(!this.dataStore.contains(element)) {
+      if (!temp.contains(element)) {
         temp.dataStore.push(element);
       }
     });
-    temp.dataStore = temp.dataStore.join(this.dataStore);
     return temp.dataStore;
+  }
+
+  intersect(set) {
+    const temp = new Set();
+    const intersect = [];
+    for (let i = 0; i < this.dataStore.length; ++i) {
+      temp.add(this.dataStore[i]);
+    }
+
+    set.dataStore.forEach(element => {
+      if (temp.contains(element)) {
+        intersect.push(element);
+      }
+    });
+    return intersect;
   }
 }

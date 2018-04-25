@@ -93,5 +93,39 @@ describe('Set - Class and Methods', () => {
 
       expect(out).to.be.false;
     });
+
+    it('union() - should return union of elements', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+
+      const set2 = new Set();
+
+      set2.add(34);
+      set2.add(46);
+      set2.add(45);
+      set2.add(44);
+      const out = set.union(set2);
+
+      expect(out).to.eql([34, 46, 45, 44]);
+    });
+
+    it('union() - should return union of elements', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+
+      const set2 = new Set();
+
+      set2.add(34);
+      set2.add(46);
+      set2.add(45);
+      set2.add(44);
+      const out = set.intersect(set2);
+
+      expect(out).to.eql([34, 46]);
+    });
   });
 });
