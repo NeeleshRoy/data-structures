@@ -111,7 +111,7 @@ describe('Set - Class and Methods', () => {
       expect(out).to.eql([34, 46, 45, 44]);
     });
 
-    it('union() - should return union of elements', () => {
+    it('intersect() - should return union of elements', () => {
       const set = new Set();
 
       set.add(34);
@@ -126,6 +126,60 @@ describe('Set - Class and Methods', () => {
       const out = set.intersect(set2);
 
       expect(out).to.eql([34, 46]);
+    });
+
+    it('subset() - should return false', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+
+      const set2 = new Set();
+
+      set2.add(34);
+      set2.add(46);
+      set2.add(45);
+      set2.add(44);
+
+      const out = set.subset(set2);
+
+      expect(out).to.be.false;
+    });
+
+    it('subset() - should return false', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      set.add(45);
+      set.add(44);
+
+      const set2 = new Set();
+
+      set2.add(34);
+      set2.add(46);
+      set2.add(54);
+
+      const out = set.subset(set2);
+
+      expect(out).to.be.false;
+    });
+
+    it('subset() - should return true', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      set.add(45);
+      set.add(44);
+
+      const set2 = new Set();
+
+      set2.add(34);
+      set2.add(46);
+
+      const out = set.subset(set2);
+      expect(out).to.be.true;
     });
   });
 });

@@ -59,4 +59,20 @@ export default class Set {
     });
     return intersect;
   }
+
+  subset(set) {
+    if (this.dataStore.length < set.dataStore.length) return false;
+
+    const temp = new Set();
+    for (let i = 0; i < this.dataStore.length; ++i) {
+      temp.add(this.dataStore[i]);
+    }
+
+    for (let i = 0; i < set.dataStore.length; i++) {
+      if (!temp.contains(set.dataStore[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
