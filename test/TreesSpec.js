@@ -10,6 +10,7 @@
 import { expect } from 'chai';
 import Node from '../src/Trees/Node';
 import BST from '../src/Trees/BinaryTree';
+import sinon from 'sinon';
 
 describe('Node - Class and Methods', () => {
   describe('Node.properties', () => {
@@ -69,6 +70,7 @@ describe('BST - Functions', () => {
   describe('static Inorder()', () => {
     it('Should traverse the tree properly', () => {
       const tree = new BST();
+      const spy = sinon.spy(console, 'log');
       tree.insert(34);
       tree.insert(35);
       tree.insert(31);
@@ -76,6 +78,26 @@ describe('BST - Functions', () => {
       tree.insert(40);
 
       BST.inOrder(tree.root);
+
+      expect(spy.callCount).to.eql(5);
+      spy.restore();
+    });
+  });
+
+  describe('static Preorder()', () => {
+    it('Should traverse the tree properly', () => {
+      const tree = new BST();
+      const spy = sinon.spy(console, 'log');
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+
+      BST.preOrder(tree.root);
+
+      expect(spy.callCount).to.eql(5);
+      spy.restore();
     });
   });
 });

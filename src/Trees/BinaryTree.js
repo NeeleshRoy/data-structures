@@ -39,5 +39,21 @@ export default class {
       this.inOrder(node.right);
     }
   }
+
+  static preOrder(node) {
+    if (!(node === null)) {
+      console.log(node.show());
+      this.preOrder(node.left);
+      this.preOrder(node.right);
+    }
+  }
+
+  static postOrder(node) {
+    if (!(node === null)) {
+      this.postOrder(node.left);
+      this.postOrder(node.right);
+      console.log(node.show());
+    }
+  }
 }
 
