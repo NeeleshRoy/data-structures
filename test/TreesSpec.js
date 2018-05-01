@@ -100,4 +100,63 @@ describe('BST - Functions', () => {
       spy.restore();
     });
   });
+
+  describe('static Postorder()', () => {
+    it('Should traverse the tree properly', () => {
+      const tree = new BST();
+      const spy = sinon.spy(console, 'log');
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+
+      BST.postOrder(tree.root);
+
+      expect(spy.callCount).to.eql(5);
+      spy.restore();
+    });
+  });
+
+  describe('getMin()', () => {
+    it('Should return the minimum value of the tree', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+
+      const out = tree.getMin();
+      expect(out).to.eql(29);
+    });
+
+    it('Should return the null', () => {
+      const tree = new BST();
+
+      const out = tree.getMin();
+      expect(out).to.eql(null);
+    });
+  });
+
+  describe('getMax()', () => {
+    it('Should return the maximum value of the tree', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+
+      const out = tree.getMax();
+      expect(out).to.eql(40);
+    });
+
+    it('Should return the null', () => {
+      const tree = new BST();
+
+      const out = tree.getMax();
+      expect(out).to.eql(null);
+    });
+  });
 });

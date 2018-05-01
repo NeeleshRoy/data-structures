@@ -55,5 +55,29 @@ export default class {
       console.log(node.show());
     }
   }
+
+  getMin() {
+    let current = this.root;
+    if (current === null) {
+      return null;
+    }
+
+    while (current.left) {
+      current = current.left;
+    }
+    return current.data;
+  }
+
+  getMax() {
+    let current = this.root;
+    if (current === null) {
+      return null;
+    }
+
+    while (current.right) {
+      current = current.right;
+    }
+    return current.data;
+  }
 }
 
