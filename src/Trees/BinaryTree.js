@@ -79,5 +79,21 @@ export default class {
     }
     return current.data;
   }
+
+  find(element) {
+    if (!this.root) return false;
+    if (this.root.data === element) return this.root;
+
+    let current = this.root;
+    while (current.data !== element) {
+      if (element < current.data) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+
+    return current;
+  }
 }
 

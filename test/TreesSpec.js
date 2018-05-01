@@ -159,4 +159,42 @@ describe('BST - Functions', () => {
       expect(out).to.eql(null);
     });
   });
+
+  describe('find()', () => {
+    it('Should return null', () => {
+      const tree = new BST();
+
+      const out = tree.find(54);
+      expect(out).to.eql(false);
+    });
+
+    it('Should return the root node', () => {
+      const tree = new BST();
+      tree.insert(34);
+      const out = tree.find(34);
+      expect(out).to.eql({ data: 34, left: null, right: null });
+    });
+
+    it('Should return the left found node', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+      const out = tree.find(29);
+      expect(out).to.eql({ data: 29, left: null, right: null });
+    });
+
+    it('Should return the right found node', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+      const out = tree.find(40);
+      expect(out).to.eql({ data: 40, left: null, right: null });
+    });
+  });
 });
