@@ -139,5 +139,10 @@ export default class {
     }
     return count;
   }
+
+  getEdgeCount() {
+    if (this.root === null) return 0;
+    return this.getNodeCount() - 1;
+  }
 }
 

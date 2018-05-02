@@ -264,4 +264,38 @@ describe('BST - Functions', () => {
       expect(out).to.eql(2);
     });
   });
+
+  describe('getEdgeCount()', () => {
+    it('Should return null', () => {
+      const tree = new BST();
+
+      const out = tree.getEdgeCount();
+      expect(out).to.eql(0);
+    });
+
+    it('Should return 2', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+
+      const out = tree.getEdgeCount();
+      expect(out).to.eql(2);
+    });
+
+    it('Should return 7', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+      tree.insert(45);
+      tree.insert(20);
+      tree.insert(32);
+
+      const out = tree.getEdgeCount();
+      expect(out).to.eql(7);
+    });
+  });
 });
