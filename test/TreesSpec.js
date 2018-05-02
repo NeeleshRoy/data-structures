@@ -197,4 +197,36 @@ describe('BST - Functions', () => {
       expect(out).to.eql({ data: 40, left: null, right: null });
     });
   });
+
+  describe('getNodeCount()', () => {
+    it('Should return null', () => {
+      const tree = new BST();
+
+      const out = tree.getNodeCount();
+      expect(out).to.eql(0);
+    });
+
+    it('Should return 3', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+
+      const out = tree.getNodeCount();
+      expect(out).to.eql(3);
+    });
+
+    it('Should return 6', () => {
+      const tree = new BST();
+      tree.insert(34);
+      tree.insert(35);
+      tree.insert(31);
+      tree.insert(29);
+      tree.insert(40);
+      tree.insert(45);
+
+      const out = tree.getNodeCount();
+      expect(out).to.eql(6);
+    });
+  });
 });
