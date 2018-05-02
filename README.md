@@ -51,6 +51,11 @@ $ npm install
     * Dict - Problem 2
 7. Sets:
     * Sets
+8. Binary Trees:
+    * Building
+    * Searching
+    * Counting Occurences, nodes, edges
+    * Traversing
 
 ### How to Test
 

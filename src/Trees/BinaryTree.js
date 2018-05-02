@@ -95,5 +95,54 @@ export default class {
 
     return current;
   }
+
+  getNodeCount() {
+    if (this.root === null) return 0;
+    const arr = [];
+    arr.push(this.root);
+    let count = 1;
+    while (arr.length > 0) {
+      const node = arr.shift();
+
+      if (node.left !== null) {
+        ++count;
+        arr.push(node.left);
+      }
+
+      if (node.right !== null) {
+        ++count;
+        arr.push(node.right);
+      }
+    }
+    return count;
+  }
+
+  getFullNodeCount() {
+    if (this.root === null) return 0;
+    const arr = [];
+    arr.push(this.root);
+    let count = 0;
+    while (arr.length > 0) {
+      const node = arr.shift();
+
+      if (node.left !== null && node.right !== null) {
+        ++count;
+      }
+
+      if (node.left !== null) {
+        arr.push(node.left);
+      }
+
+      if (node.right !== null) {
+        arr.push(node.right);
+      }
+    }
+    return count;
+  }
+
+  getEdgeCount() {
+    if (this.root === null) return 0;
+    return this.getNodeCount() - 1;
+  }
 }
 
