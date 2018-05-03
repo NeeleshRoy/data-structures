@@ -53,7 +53,29 @@ describe('Graphs - Class and Methods', () => {
 
       g.addEdges(0, 1);
       g.addEdges(0, 2);
-      expect(g.toString()).to.eql(' 0 -> [ 0 ][ 1 ] 1 -> [ 0 ] 2 -> [ 0 ]');
+      expect(g.toString()).to.eql(' 0 -> [ 1 ][ 2 ] 1 -> [ 0 ] 2 -> [ 0 ]');
+    });
+  });
+
+  describe('Graphs.dfs()', () => {
+    it('Should show the graph in string version', () => {
+      const g = new Graph(5);
+
+      g.addEdges(0, 1);
+      g.addEdges(0, 2);
+      g.addEdges(1, 3);
+      g.addEdges(2, 4);
+      g.dfs(0);
+    });
+
+    it('Should show the graph in string version', () => {
+      const g = new Graph(6);
+
+      g.addEdges(0, 1);
+      g.addEdges(0, 2);
+      g.addEdges(1, 3);
+      g.addEdges(2, 4);
+      g.dfs(0);
     });
   });
 });
