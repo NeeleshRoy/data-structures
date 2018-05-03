@@ -181,5 +181,54 @@ describe('Set - Class and Methods', () => {
       const out = set.subset(set2);
       expect(out).to.be.true;
     });
+
+    it('higher() - should return lowest element higher than given element', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      set.add(45);
+      set.add(44);
+
+      const out = set.higher(40);
+      expect(out).to.eql(44);
+    });
+
+    it('higher() - should return false', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      set.add(45);
+      set.add(44);
+
+      const out = set.higher(56);
+      expect(out).to.be.false;
+    });
+
+    it('lower() - should return false', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(46);
+      set.add(45);
+      set.add(44);
+
+      const out = set.lower(19);
+      expect(out).to.be.false;
+    });
+
+    it('lower() - should return false', () => {
+      const set = new Set();
+
+      set.add(34);
+      set.add(39);
+      set.add(46);
+      set.add(45);
+      set.add(44);
+
+      const out = set.lower(40);
+      expect(out).to.eql(39);
+    });
   });
 });

@@ -75,4 +75,24 @@ export default class Set {
     }
     return true;
   }
+
+  higher(element) {
+    const sorted = this.dataStore.sort();
+    for (const item of sorted) {
+      if (item > element) {
+        return item;
+      }
+    }
+    return false;
+  }
+
+  lower(element) {
+    const sorted = this.dataStore.sort().reverse();
+    for (const item of sorted) {
+      if (item < element) {
+        return item;
+      }
+    }
+    return false;
+  }
 }
