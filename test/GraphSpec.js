@@ -58,7 +58,7 @@ describe('Graphs - Class and Methods', () => {
   });
 
   describe('Graphs.dfs()', () => {
-    it('Should show the graph in string version', () => {
+    it('Should perform a depth first search on the graph', () => {
       const g = new Graph(5);
 
       g.addEdges(0, 1);
@@ -67,15 +67,17 @@ describe('Graphs - Class and Methods', () => {
       g.addEdges(2, 4);
       g.dfs(0);
     });
+  });
 
-    it('Should show the graph in string version', () => {
-      const g = new Graph(6);
+  describe('Graphs.bfs()', () => {
+    it('Should perform a breadth first search on the graph', () => {
+      const g = new Graph(5);
 
       g.addEdges(0, 1);
       g.addEdges(0, 2);
       g.addEdges(1, 3);
       g.addEdges(2, 4);
-      g.dfs(0);
+      g.bfs(0);
     });
   });
 });

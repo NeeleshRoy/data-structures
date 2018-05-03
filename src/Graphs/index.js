@@ -10,6 +10,7 @@ export default class {
     for (let i = 0; i < this.vertices; ++i) {
       this.marked[i] = false;
     }
+    this.edgeTo = [];
   }
 
   addEdges(v, w) {
@@ -38,5 +39,26 @@ export default class {
         this.dfs(w);
       }
     });
+  }
+
+  bfs(s) {
+    const queue = [];
+    this.marked[s] = true;
+    queue.push(s);
+
+    while (queue.length > 0) {
+      const v = queue.shift();
+      if (v !== undefined) {
+        console.log(`${v}`);
+      }
+
+      this.adj[v].forEach(w => {
+        if (!this.marked[w]) {
+          this.edgeTo[w] = v;
+          this.marked[w] = true;
+          queue.push(w);
+        }
+      });
+    }
   }
 }
