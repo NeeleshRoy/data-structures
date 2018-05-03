@@ -54,6 +54,11 @@ $ npm install
     * problem - 1
     * Higher() - Included in class definition
     * Lower() - Included in class definition
+8. Binary Trees:
+    * Building
+    * Searching
+    * Counting Occurences, nodes, edges
+    * Traversing
 
 ### How to Test
 
