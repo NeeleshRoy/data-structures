@@ -21,6 +21,8 @@ $ npm install
 5. Stack
 6. Dictionary
 7. Sets
+8. Binary Trees
+9. Graphs
 
 ### Table of contents:
 1. Arrays :
@@ -59,6 +61,9 @@ $ npm install
     * Searching
     * Counting Occurences, nodes, edges
     * Traversing
+9. Graphs:
+    * BFS
+    * DFS
 
 ### How to Test
 
